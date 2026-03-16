@@ -23,7 +23,7 @@ int main() {
     FILE *readPtr = fopen("data.txt", "r");
     if (readPtr == NULL) return 1;
 
-    // fscanf reads data from the location readPtr provides and saves it into data_array
+    // fscanf reads data from the location readPtr provides and saves it into data_array, if it finds a float its shows a value 1
     // & gives it the exact memory location of data_array which means it can write into it
     // without & it would give it just a copy of the variable that it can read and not write
     while (count < numOfNumbers && fscanf(readPtr, "%f", &data_array[count]) == 1) {
