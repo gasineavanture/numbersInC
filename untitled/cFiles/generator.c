@@ -7,7 +7,7 @@
 
 
 int generate_data_file() {
-    int numOfNumbers = 0;
+    int count = 0;
     //make a pointer to file structure 
     FILE *txtfile;
 
@@ -20,10 +20,10 @@ int generate_data_file() {
 
     // Decide on number count. % 11 = 10 + 5 = 15 num
     // Dividing by 11 is always a number between 0 to 10
-    numOfNumbers = (rand() % 11) + 5;
+    count = (rand() % 11) + 5;
 
     // repeat for count
-    for (int i = 0; i < numOfNumbers; i++) {
+    for (int i = 0; i < count; i++) {
         //(rand number / max of random)*100 each as a float between 0 and 100
         float val = ((float)rand() / (float)RAND_MAX) * 100.0;
         //print in f(file)
@@ -32,7 +32,7 @@ int generate_data_file() {
 
     // close pointer
     fclose(txtfile);
-    printf("Success! Generated %d floats in data.txt\n", numOfNumbers);
+    printf("Success! Generated %d floats in data.txt\n", count);
 
-    return numOfNumbers;
+    return count;
 }
