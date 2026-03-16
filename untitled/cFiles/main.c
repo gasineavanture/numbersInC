@@ -34,10 +34,11 @@ int main() {
     int size = sizeof(data_array) / sizeof(data_array[0]);
 
 
-    minMax(data_array, size);
+    MinMaxResult results = findMinMax(data_array, size);
+
     printf("--- Results in main ---\n");
-    printf("Maximum: %.2f\n", max);
-    printf("Minimum: %.2f\n", min);
+    printf("Maximum: %.2f\n", results.max); // Access via .max
+    printf("Minimum: %.2f\n", results.min);
 
 
     float average = findAverage(data_array, size);

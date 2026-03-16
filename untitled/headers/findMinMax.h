@@ -1,10 +1,13 @@
-
 #ifndef UNTITLED_FINDMINMAX_H
 #define UNTITLED_FINDMINMAX_H
 
-extern float min;
-extern float max;
+// The compiler needs to see this BEFORE you use it in main.c
+typedef struct {
+    float min;
+    float max;
+} MinMaxResult;
 
-void minMax(float data_array[], int size);
+// Use the exact same name here as in your .c file
+MinMaxResult findMinMax(float data_array[], int size);
 
-#endif //UNTITLED_FINDMINMAX_H
+#endif

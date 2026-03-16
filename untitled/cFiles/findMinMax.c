@@ -1,32 +1,27 @@
 #include <stdio.h>
 
-float max = 0;
-float min = 0;
+// make a obj that has two values
+typedef struct {
+    float max;
+    float min;
+} MinMaxResult;
 
-void minMax(float data_array[], int size){
+// use obj MinMaxResult as return 
+MinMaxResult findMinMax(float data_array[], int size) {
+    MinMaxResult results; // reulst gets made using MinMaxResult blueprint
 
+    // Initialize with the first element
+    results.max = data_array[0];
+    results.min = data_array[0];
 
-    //give initial value, as we assume the first number is the max and min
-    max = data_array[0];
-    min = data_array[0];
-
-
-    // loop through array
-    for (int i = 0; i < size; i++){
-
-
-        // for each bigger crr max, become new max
-        if (data_array[i] > max){
-            max = data_array[i];
+    for (int i = 1; i < size; i++) {
+        if (data_array[i] > results.max) {
+            results.max = data_array[i];
         }
-
-        // for each smaller than crr min, become new min
-        if (data_array[i] < min){
-            min = data_array[i];
+        if (data_array[i] < results.min) {
+            results.min = data_array[i];
         }
-
-
     }
 
-
+    return results;
 }
