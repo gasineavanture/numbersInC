@@ -8,7 +8,11 @@
 
 int main() {
     // call generate_data_file from generator.c
-    generate_data_file();
+    int numOfNumbers = generate_data_file();
+
+    if(numOfNumbers == -1){
+        return 0;
+    }
 
     // make array the same size as number of numbers in data.txt
     float data_array[numOfNumbers];

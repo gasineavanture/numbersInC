@@ -4,9 +4,10 @@
 
 
 //define variable
-int numOfNumbers = 0;
 
-void generate_data_file() {
+
+int generate_data_file() {
+    int numOfNumbers = 0;
     //point to a certain file.  * makes it a pointer
     FILE *txtfile;
 
@@ -15,7 +16,7 @@ void generate_data_file() {
 
     // Open file for writing("w")
     txtfile = fopen("data.txt", "w");
-    if (txtfile == NULL) return;
+    if (txtfile == NULL) return -1;
 
     // Decide on number count. % 11 = 10 + 5 = 15 num
     numOfNumbers = (rand() % 11) + 5;
@@ -32,4 +33,6 @@ void generate_data_file() {
     // close pointer
     fclose(txtfile);
     printf("Success! Generated %d floats in data.txt\n", numOfNumbers);
+
+    return numOfNumbers;
 }

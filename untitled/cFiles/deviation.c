@@ -16,6 +16,9 @@ float deviation(float data_array[], int size) {
     }
 
     // divide by n-1
+    if(size < 2){
+        return 0;
+    }
     float variance = sum_of_squares / (size - 1);
 
     // return square root
